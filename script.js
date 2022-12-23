@@ -54,12 +54,6 @@ function createHTML() {
       const li = document.createElement("li");
       li.innerHTML = `${task.task} <span task-id="${task.id}" >X</span>`;
       listTasks.prepend(li);
-
-      // for done work 
-      li.addEventListener("click",function() {
-        li.style.color="#90ee90";
-        li.style.textDecoration="line-through";
-      })
     });
   }
 
@@ -73,7 +67,6 @@ function showError(error) {
   const messageError = document.createElement("p");
   messageError.textContent = error;
   messageError.classList.add("error");
-
   message.appendChild(messageError);
   setTimeout(() => {
     messageError.remove();
